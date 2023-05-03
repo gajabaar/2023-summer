@@ -6,13 +6,13 @@ This document describes the workflow for submissions from 2023-gajabaar that can
 
 1. **Fork the repo on GitHub to your personal account.** Click the `Fork` button on the [gajabaar](https://github.com/gajabaar) / **[2023-summer](https://github.com/gajabaar/2023-summer)** Public page. (this needs to be done only once.)
 
-![[Pasted image 20230503185534.png]]
+![fork screenshot](Images/Pasted image 20230503185534.png)
 
 2. **Clone the repository.** Click the green "Clone or download" button ①, and copy the repository's URL ② and 
 
 	type `git clone repo-url` in terminal
 
-![[Pasted image 20230503185816.png]]
+![fork screenshot](Images/Pasted image 20230503185816.png)
 
 ### Adding Changes 
 
@@ -56,12 +56,14 @@ git push origin branch-name
 
 5. **Make a pull request.** If you then go to your fork on GitHub, you should see a button to create a pull request from your branch.
 
-![[Pasted image 20230503192428.png]]
+![[Images/Pasted image 20230503192428.png]]
+![fork screenshot](Images/Pasted image 20230503192428.png)
 
 6. Once doing this, you will be presented with a page. This page will show you the diff of the changes. Double check them to make sure you are making a pull request against the right branch. 
 
 	- Enter a descriptive title in the title field. This is very important, as it is what will show up in the pull request listing and in email notifications to the people in the repo. Pull requests with undescriptive titles are more likely to be passed by.
-	![[Pasted image 20230503192705.png]]
+	![[Images/Pasted image 20230503192705.png]]
+	![fork screenshot](Images/Pasted image 20230503192705.png)
 	
 7. **Pushing additional changes**. Once you have created the pull request, it will likely be reviewed and some additional fixes will be necessary. **Do not create a new pull request.** Rather, simply make more commits to your branch and push them up as in steps 3 and 4. They will be added to the pull request automatically.
 
