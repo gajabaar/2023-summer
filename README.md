@@ -9,6 +9,8 @@ This document describes the workflow for submissions from 2023-gajabaar that can
 
 *Note : While working with github from the command line it is best to [setup SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) (this will save you a lot of hassle).* 
 
+### Setting up your own copy of the repository
+
 1. **Fork the repo on GitHub to your personal account.** Click the `Fork` button on the [gajabaar](https://github.com/gajabaar) / **[2023-summer](https://github.com/gajabaar/2023-summer)** Public page. (this needs to be done only once.)
 
 <img src="assets/Pasted image 20230503185534.png" alt="fork screenshot" title="fork_screen">
@@ -39,6 +41,8 @@ git pull
 	- You can create a new branch as,
 	```bash
 	git checkout -b <branch-name>
+	# example: to do the acceptance assignment
+	git checkout -b susheelthapa/acceptance
 	```
 	
 	- If the branch exists 
