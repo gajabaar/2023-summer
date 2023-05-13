@@ -1,3 +1,8 @@
+## Current
+
+- [latest] /acceptance
+ 
+## Contributing 
 This document describes the workflow for submissions from 2023-gajabaar that can be public. We highly recommend you go through the document before contribution.
 
 *Note : Regarding the organization of files, each contributor will create their own folder with their own name/handle (which is consistent with other places in the program.) All work by one contributor will reside in that folder.*
