@@ -19,6 +19,7 @@ Leetcode challenge numbers:
 - [MIT Missing Semester Coursework on Version Control](https://missing.csail.mit.edu/2020/version-control/)
 - [Gajabaar Mentor's presentation on git](https://drive.google.com/drive/folders/1NrNdBcl2kWSPyZxURVZ6eSmdB4hfbwru?usp=sharing)
 - [README page on current repository](https://github.com/gajabaar/2023-summer)
+- There will be an office hour on the topic. Stay tuned on discord server for the office hour.
 
 
 ## Submission
