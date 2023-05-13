@@ -1,6 +1,6 @@
-## Current
+## Tasks Schedule
 
-- [latest] /acceptance
+- **latest**: `/acceptance`
  
 ## Contributing 
 This document describes the workflow for submissions from 2023-gajabaar that can be public. We highly recommend you go through the document before contribution.
