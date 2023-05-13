@@ -33,13 +33,13 @@ git pull
 
 	- You can create a new branch as,
 	```bash
-	git checkout -b branch-name
+	git checkout -b <branch-name>
 	```
 	
 	- If the branch exists 
 	```bash
-	git checkout branch-name
-```
+	git checkout <branch-name>
+	```
 
 3. **Make your changes and commit them.** Once you have created your branch, make your changes and commit them. Remember to keep your commits atomic, that is, each commit should represent a single unit of change. Also, remember to write helpful commit messages, so that someone can understand what the commit does just from reading the message without having to read the diff.
 
