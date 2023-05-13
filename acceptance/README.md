@@ -9,9 +9,9 @@ using version control software (in this case, git).
 ## Tasks
 
 Leetcode challenge numbers:
-12 - integer to roman
-13 - roman to integer
-71 - simplify path
+- 12 - integer to roman
+- 13 - roman to integer
+- 71 - simplify path
 
 ## Resources
 - [Leetcode Website](https://leetcode.com)
@@ -30,12 +30,10 @@ your work gets visibility from the mentors, as well as
 making sure your work is documented on your end and on 
 our end.
 
-To send in the pull request, you can view the main README.md
-document on this same repository. For this task, 
-your pull request must have the following three files:
-- acceptance/<github-id>/12-integer-to-roman.c
-- acceptance/<github-id>/13-roman-to-integer.c
-- acceptance/<github-id>/71-simplify-path.c
+For this task, your pull request must have the following three files:
+- acceptance/\<github-id>/12-integer-to-roman.c
+- acceptance/\<github-id>/13-roman-to-integer.c
+- acceptance/\<github-id>/71-simplify-path.c
 
 Extra tips:
 - .c part will change as per your choice of language.
