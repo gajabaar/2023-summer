@@ -92,7 +92,7 @@ Let's dissect the above program and discuss what is happening is every line.
 #### `Dockerfile`
 
 <details>
-<summary>Click here for explanation</summary>
+<summary>Click here to view the code</summary>
 
 The code for `Dockerfile` is:
 
@@ -227,7 +227,7 @@ Let's dissect the above program and discuss what is happening is every line.
 #### `entrypoint.sh`
 
 <details>
-<summary>Click here for explanation</summary>
+<summary>Click here to view the code</summary>
 
 The code for `entrypoint.sh` is:
 
