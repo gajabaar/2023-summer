@@ -32,7 +32,7 @@ Feel encouraged to search around for more references/resources.
 Note that this instruction is a couple years dated, and uses VMWare on
 ubuntu host system for the setup. Your base OS can be anything you choose,
 and you can use VirtualBox as an alternative to VMWare. 
-- [Instructions from Kali Linux distributors](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) 
+- [Instructions from Kali Linux distributors for VirtualBox](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) 
 You can also look around for instructions for other platforms 
 on the same website. May be look around for performance tips too.
 - [Kali Linux Revealed Coursework](https://portal.offsec.com/courses/pen-103/books-and-videos/modules) 
@@ -40,7 +40,7 @@ this is a little "extra" IMO but you are welcome to go through it.
 Can make you feel more comfortable with the OS.
 - For Windows users, we have had WSL specific issues in the past. 
 While we encourage you to explore the technology, 
-we might NOT be officially able to debug your issues.
+we might NOT be officially able to debug your issues. 
 
 
 [Docker]
@@ -73,12 +73,14 @@ your work gets visibility from the mentors, as well as
 making sure your work is documented on your end and on 
 our end.
 
-For this task, your pull request must have the following three files:
-- setup/\<github-id>/<htb-challenge-name>.md
-- setup/\<github-id>/assets
+For this task, your pull request must have the following two files/folder:
+- `setup/\<github-id>/\<htb-challenge-name>.md`
+- `setup/\<github-id>/assets` for images/screenshots. We advise you
+avoid making this bulky where possible to avoid size bloat on the repo.
 
 Optionally, you can document your steps on how you got your setup working
-and send that in as part of the submission.
+and send that in as part of the submission. This can be also be a
+screenshot of your setup with kali linux and/or docker working.
 
 
 ## Miscellaneous [BANDIT]
