@@ -74,8 +74,8 @@ making sure your work is documented on your end and on
 our end.
 
 For this task, your pull request must have the following two files/folder:
-- `setup/\<github-id>/\<htb-challenge-name>.md`
-- `setup/\<github-id>/assets` for images/screenshots. We advise you
+- `setup/<github-id>/<htb-challenge-name>.md`
+- `setup/<github-id>/assets` for images/screenshots. We advise you
 avoid making this bulky where possible to avoid size bloat on the repo.
 
 Optionally, you can document your steps on how you got your setup working
