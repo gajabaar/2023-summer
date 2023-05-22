@@ -4,17 +4,18 @@
 To continue with our purposes we will download the files and extract them.
 
 ## Files
+```
 .
 ├── build-docker.sh # file to automate docker commands
 ├── challenge
 │   ├── application
-|   │    └── ... # main application
+│   │    └── ... # main application
 │   ├── flag
 │   └── run.py
 ├── config
 │   └── supervisord.conf # supervisord conf
 └── Dockerfile # describe the docker image to be built
-
+```
 
 ## The Application
 The application is a web application that adds a petting animation to any image. For this it exposes two end points.
@@ -24,6 +25,10 @@ The application is a web application that adds a petting animation to any image.
 	b. applies a petting motion
 	c. generates a GIF
 	d. responds with it.
+
+![Intro Page](assets/Intro.png "Intro")
+
+![Demo Page](assets/Demo.png "Demo")
 
 The application runs on `localhost` on port `1337`. The port will be relevant later.
 
