@@ -5,10 +5,10 @@
 We are provided with some downloadable files in this challenge. After downloading the given files, we extract the zip file after using the given password "hackthebox".
 Once, the files are extracted or unzipped, we can see the folders/files: challenge, config, build_docker.sh, Dockerfile, entrypoint.sh and flag. Here are brief description of what every file/folder contains and what role does it play helping us to run the challenge in the docker.
 
-![folders](/2023-summer/setup/sarika/assets/folders.png)
+![folders](assets/folders.png)
 
 ### 1. Challenge
-![challenge](/2023-summer/setup/sarika/assets/challenge.png)
+![challenge](assets/challenge.png)
 
  ```challenge/``` folder has source codes including required images as assets which we will be pentesting to solve the challenge.
 
@@ -27,7 +27,7 @@ docker run --name=web_toxic --rm -p1337:80 -it web_toxic
 
 
 ### 3. Config
-![config folder](/2023-summer/setup/sarika/assets/config.png)
+![config folder](assets/config.png)
 
  ```config directory``` has the config files for Nginx, FPM and the components needed for the Toxic webapp. A config file is a file used to configure the parameters and initial settings for some computer programs. 
 
@@ -227,6 +227,6 @@ CMD /usr/bin/supervisord -c /etc/supervisord.conf
 
 - ```CMD /usr/bin/supervisord -c /etc/supervisord.conf``` This specifies the default command to run when the container starts. It starts Supervisord and passes the "supervisord.conf" configuration file.
 
-![build-docker](/2023-summer/setup/sarika/assets/docker-run.png)
+![build-docker](assets/docker-run.png)
 
 At the end, we opened the *build-docker.sh* file in docker container & viewed the challenge through http://localhost:1337 .
