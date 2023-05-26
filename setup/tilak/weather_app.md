@@ -19,6 +19,19 @@ his weather application is notorious for trapping the souls of ambitious weather
  build-docker.sh  challenge  config  Dockerfile
 ```
 
+## Setup
+In order to setup the application locally, we can build a docker image with build-docker.sh script which will build the docker image for us. This built docker image can be run in our local machine.
+* To execute the script, run the following command in the terminal from the web_weather_app/ directory.
+```
+sudo ./build-docker.sh
+```
+* It looks like below 
+![image1](./assets/d1.png)
+![image2](./assets/d2.png)
+
+* Visiting localhost:1337 opens up the challenge website as:
+![result](./assets/weather.png)
+
 ## Explaination of above files
 
 ### build-docker.sh
