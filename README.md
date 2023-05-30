@@ -1,7 +1,6 @@
 ## Tasks Schedule
 
-- **latest**: `1.gwitter`
-- `/setup`
+- **latest**: `/setup`
 - `/acceptance`
  
 ## Contributing 
