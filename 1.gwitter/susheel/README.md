@@ -8,6 +8,7 @@ The entity diagram of the database we will be building is shown below:
 
 We will be using **SQLite3** database.
 [comments.sql](database%2Fmodels%2Fcomments.sql)
+
 ## Installation of `sqlite3` in linux
 
 [*You can skip this section if you are populating the database inside Docker Container*]
@@ -81,3 +82,6 @@ You can run below query to see if you output is also same.
   4|askipperbottom3|AAE3rp7YwBtQ|2023-05-31 00:41:24
   5|jitzkov4|e4P3MvNy|2023-05-31 00:41:24
   ```
+
+**_Note:
+You can run the SQL query statement given in the [query.sql](./query.sql) file._**
