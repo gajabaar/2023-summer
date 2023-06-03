@@ -30,6 +30,11 @@ Start working on user sign up, sign in, sign out.
 Figure out how to connect to a database using PHP
 and use it.
 
+- PHP fundamentals (how it generates dynamic content)
+- PHP interactions (how it processes form data)
+- PHP infrastructure (how it connects to a database service)
+- Introduction to PHP interpreter
+
 ### Week 3 - Gwitter
 This is an additional week to continue work on Gwitter,
 perhaps add a CSS framework to make it look prettier,
