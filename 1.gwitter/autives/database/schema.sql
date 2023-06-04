@@ -80,4 +80,11 @@ CREATE TABLE "Likes"(
         ON UPDATE CASCADE
 );
 
+-- Indexes for faster query processing
+CREATE UNIQUE INDEX IF NOT EXISTS [username] ON Users([username]);
+CREATE INDEX IF NOT EXISTS [user] ON Gweets([userId]);
+CREATE INDEX IF NOT EXISTS [gweet] ON Comments([gweetId]);
+CREATE INDEX IF NOT EXISTS [follower] ON Followers([followerId]);
+CREATE INDEX IF NOT EXISTS [followee] ON Followers([followeeId]);
+CREATE INDEX IF NOT EXISTS [likedBy] ON Likes([likedGweet]);
  
