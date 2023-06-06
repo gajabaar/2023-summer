@@ -1,15 +1,23 @@
-FROM ubuntu:latest
+FROM ubuntu/apache2:latest 
 
-COPY . /gwitter
 
-WORKDIR /gwitter
 
 RUN apt-get update
 RUN apt-get -y upgrade
 
-WORKDIR /gwitter
+COPY . /var/www/html
+
+WORKDIR /var/www/html
+RUN ls
 
 RUN bash install_sqlite3.sh
 RUN bash database/populate_database.sh
+RUN bash install_php.sh
+
+
+RUN rm /var/www/html/index.html
+
+
+
 
 
