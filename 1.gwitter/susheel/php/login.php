@@ -24,7 +24,7 @@
 
     <div class="background flex-c-c">
         <div class="container flex-c-c">
-            <form action="profile.php" class="flex-c-c">
+            <form action="index.php" method="POST" class="flex-c-c">
                 <h1>Gwitter</h1>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
