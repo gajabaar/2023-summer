@@ -9,7 +9,11 @@
 </head>
 
 <body>
-    <h1>This is profile page</h1>
+    <h1>This is
+        <?php
+        $_SESSION['username']
+        ?>
+        profile page</h1>
 </body>
 
 </html>
