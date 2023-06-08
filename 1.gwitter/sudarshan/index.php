@@ -13,8 +13,6 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +31,7 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
   <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link btn-secondary rounded-3 mx-2" href="/profile.php">Profile</a>
+        <a class="nav-link btn-success rounded-3 mx-2" href="/profile.php">Profile</a>
       </li> 
       <li class="nav-item active">
         <a class="nav-link btn-danger rounded-3" href="/logout.php">Logout</a>
@@ -42,6 +40,36 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
     </ul>
   </div>
 </nav>
+<div class="d-flex justify-content-center">
+<div class="d-flex mt-3 flex-column">
+<form class="form-inline">
+  
+  <div class="form-group mb-2 d-flex">
+    <input type="text" name="gweet" class="form-control" id="gweet" placeholder="Gweet something!">
+    <button type="submit" class="btn btn-primary mb-2 mx-1">Gweet</button>
+  </div>
+</form>
+
+<?php
+                // LOOP TILL END OF DATA
+                while($rows=$result->fetchArray())
+                {
+            ?>
+    <div class="card p-2 my-1">
+        <div class="d-flex justify-content-between">
+            <div class="card-title fw-bold text-dark"><?php echo $rows['username'] ?></div>
+            <a href="" class="btn-outline text-success">Follow</a>
+        </div>
+        <div class=""><?php echo $rows['gweet'] ?></div>
+
+    </div>
+    <?php 
+        }
+        ?>
+</div>
+
+
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
