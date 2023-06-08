@@ -1,5 +1,5 @@
 INSERT INTO users("firstName", "lastName", "username", "password") VALUES 
-("Sarika", "Ghimire", "latrodectus", "s@r!k@21"),
+("Sarika", "Ghimire", "latrodectus", "sarika123"),
 ("Arpan", "Paudel", "daudel", "ihaveproperties"),
 ("Suraj", "Dhakal", "dhakaldim", "wholetthedogsout"),
 ("Bishnu", "Paudel", "iamdesigner","arpanlies")

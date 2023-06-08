@@ -1,6 +1,6 @@
 # Database Desgining for Gwitter
 
-We are going to design the database of Gwittter using **Sqlite3**.
+We are going to design the database of Gwitter using **Sqlite3**.
 
 ## Installation of Sqlite3
 I have PopOS installed in my laptop. This command works for any Debian based OS.
