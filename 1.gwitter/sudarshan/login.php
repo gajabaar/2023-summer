@@ -17,6 +17,7 @@
             header("Location: index.php");
             session_start();
             $_SESSION['authenticated']=true;
+            $_SESSION['username']=$username;
             exit();
         } else {
             // Invalid username or password

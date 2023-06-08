@@ -1,12 +1,26 @@
 <?php 
 session_start();
 if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
-    // User is not authenticated, redirect to the login page or display an authentication error message
     header('Location: login.php');
     exit;
 }
-
 $db = new SQLite3("./database/gwitter.db");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $gweet = $_POST['gweet'];
+  $username = $_SESSION['username'];
+
+  $res = $db->query("SELECT id FROM users WHERE username = '$username'");
+  $userId = $res->fetchArray()['id'];
+  $query = $db->prepare("Insert into gweets(gweet,user_id) values(:gweet,:userid)");
+  $query->bindValue(':gweet',$gweet);
+  $query->bindValue(':userid',$userId);
+
+  $r = $query->execute();
+
+  
+}
+
 $result = $db->query("Select * from gweets join users on gweets.user_id=users.id");
 // while($row = $result->fetchArray()){
 // }
@@ -31,7 +45,7 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
   <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link btn-success rounded-3 mx-2" href="/profile.php">Profile</a>
+        <a class="nav-link btn-success rounded-3 mx-2" href="/profile.php"><?php echo $_SESSION['username']; ?></a>
       </li> 
       <li class="nav-item active">
         <a class="nav-link btn-danger rounded-3" href="/logout.php">Logout</a>
@@ -42,10 +56,10 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
 </nav>
 <div class="d-flex justify-content-center">
 <div class="d-flex mt-3 flex-column">
-<form class="form-inline">
+<form class="form-inline" method="post" action="/index.php">
   
   <div class="form-group mb-2 d-flex">
-    <input type="text" name="gweet" class="form-control" id="gweet" placeholder="Gweet something!">
+    <input type="text" name="gweet" class="form-control" id="gweet" placeholder="Gweet something!" required>
     <button type="submit" class="btn btn-primary mb-2 mx-1">Gweet</button>
   </div>
 </form>
@@ -57,10 +71,9 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
             ?>
     <div class="card p-2 my-1">
         <div class="d-flex justify-content-between">
-            <div class="card-title fw-bold text-dark"><?php echo $rows['username'] ?></div>
-            <a href="" class="btn-outline text-success">Follow</a>
+            <a href="/profile.php?id=<?php echo $rows['user_id']; ?>" class="card-title fw-bold text-primary"><?php echo $rows['username'] ?></a>
         </div>
-        <div class=""><?php echo $rows['gweet'] ?></div>
+        <div class="" id="<?php echo $rows['id']; ?>"><?php echo htmlspecialchars($rows['gweet']) ?></div>
 
     </div>
     <?php 
@@ -70,7 +83,6 @@ $result = $db->query("Select * from gweets join users on gweets.user_id=users.id
 
 
 </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
