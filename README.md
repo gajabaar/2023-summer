@@ -1,16 +1,6 @@
 ## Tasks Schedule
 
-<<<<<<< Updated upstream
 - **latest**: `/acceptance`
-=======
-<<<<<<< HEAD
-- **latest**: `1.gwitter`
-- `/setup`
-- `/acceptance`
-=======
-- **latest**: `/acceptance`
->>>>>>> parent of 84fea85 (Merge branch 'gajabaar:main' into main)
->>>>>>> Stashed changes
  
 ## Contributing 
 This document describes the workflow for submissions from 2023-gajabaar that can be public. We highly recommend you go through the document before contribution.
