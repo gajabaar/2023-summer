@@ -7,18 +7,20 @@
         $database = new SQLite3("./database/gwitter.db");
     
         // Prepare the SQL statement to retrieve the user with matching credentials
-        $query = $database->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $query = $database->prepare("SELECT * FROM users WHERE username = :username");
         $query->bindValue(':username', $username);
-        $query->bindValue(':password', $password);
-
+        
         $result = $query->execute();
-        if ($result->fetchArray()) {
+        if ($user = $result->fetchArray()) {
             // Successful login, redirect to a protected page
-            header("Location: index.php");
-            session_start();
-            $_SESSION['authenticated']=true;
-            $_SESSION['username']=$username;
-            exit();
+            if(password_verify($password,$user['password'])){
+                header("Location: index.php");
+                session_start();
+                $_SESSION['authenticated']=true;
+                $_SESSION['username']=$username;
+                exit();
+            }
+            
         } else {
             // Invalid username or password
             $error = "Invalid username or password";

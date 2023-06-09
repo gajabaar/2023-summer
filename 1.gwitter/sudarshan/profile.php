@@ -71,7 +71,7 @@
     </ul>
   </div>
 </nav>
-<div class="d-flex p-2 justify-content-center">
+<div class="container d-flex p-2 justify-content-start">
     <div class="card">
         <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
