@@ -239,9 +239,23 @@ Note that `SQLite` doesn’t directly support the `RIGHT JOIN` and `FULL OUTER J
 \
 &nbsp; 
 ## WEEK Two
-***
-...
 <details>
+<summary> Click here to view Week Two Report </summary>
+
+In third week I have created a dynamic website that includes almost all the features.
+The pages that I have created in this week includes following:
+- `index.php` page : It is the first loading page. It is where the user enter their password and username to login to the Gwitter.
+- `login.php` page : When a user submits his/her password and username then its validity is checked. If it is validated then the user will be directed to the `homepage.php` else if password is incorrect then user is redirected to `index.php` and all the errors are displayed.
+- `homepage.php` page : This page can't be acessed if the user hasn't loggedin. In homepage users can post new tweet and view all their tweets and the tweets of person they follow.
+- `logout.php` page : This page logouts a user.
+- `profile.php` page : This page displays the profile of a user, their followers and following numbers also. Also this page displays all the post of the user that we are viewing.
+- `updateprofile.php` page : This page is used update the  profile of the user that is currently logged in.
+- `followers.php` page : Show all the followers of a user.
+- `following.php` page : Show all the following of a user.
+ 
+<details>
+\
+&nbsp; 
 <summary> Click here to view Week Two Report </summary>
 Comming Soon
 
