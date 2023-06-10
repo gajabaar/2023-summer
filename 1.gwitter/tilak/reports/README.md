@@ -31,3 +31,14 @@ The Schema to create tables is available at tables.sql
 The dummy data are available at dummydata.sql
 
 The readme file to know about the commands to run the sql files is provided.
+
+
+### Some of feature with screenshots
+1. Registration
+![register](./reg.png)
+
+2. Login
+![Login](./login.png)
+
+3. Post gweet and show all gweets
+![Gweets](./feed.png)
