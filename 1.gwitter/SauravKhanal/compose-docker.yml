@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - 8000:80
+    command: ["nginx", "-g", "daemon off;"]
+
+# The web service will listen on port 8000 on the host machine and forward requests to port 80 inside the container.
+# Make sure to rebuild your Docker image for the web service using the updated Docker Compose file by running docker-compose build web.
+# Once the rebuild is complete, you can start your services using docker-compose up. 
+# Requests made to localhost:8000 will be forwarded to the web service's container on port 80.
