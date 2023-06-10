@@ -6,13 +6,3 @@ CREATE TABLE COMMENTS (
   FOREIGN KEY (USER_ID) REFERENCES Users(id),
   FOREIGN KEY (GWEET_ID) REFERENCES Tweets(id)
 );
-
--- create a comment
-
-INSERT INTO COMMENTS (id, USER_ID, GWEET_ID, COMMENTS)
-VALUES (1, 123, 456, 'Great tweet!');
-
--- Delete a comment
-
-DELETE FROM COMMENTS
-WHERE id = 1;
