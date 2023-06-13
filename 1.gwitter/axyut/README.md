@@ -44,9 +44,6 @@ This project is build with following languages and framework
 - sqlite3
 - PHP
 - Docker
-- Kubernetes
-- minikube
-- skaffold
 
 ### Installation
 

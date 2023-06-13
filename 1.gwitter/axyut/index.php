@@ -1,44 +1,39 @@
-<html>
-
-<head>
-    <title> Gwitter </title>
-</head>
-
-<body>
-    Welcome to Gwitter! <br/>
-    <form method="POST">
-        <input type="text" name="username" placeholder="username"/>
-        <input type="text" name="password" placeholder="password"/>
-        <input type="submit" value="Submit">
+<?php
+require_once 'includes/header.php';
+?>
+<div class="auth-page">
+    
+<div class="container">
+       <h3>Login to your account</h3>
+    <form method="POST" action="login.php">
+        <div class="inputFields">
+       
+        <input type="text" name="username" placeholder="Username"/>
+       
+        <input type="text" name="password" placeholder="Password"/>
+        <button class="active-btn" type="submit"> <span>Login</span></button></div>
+        
     </form>
-</body>
+    </div>
+    
+    <div class="container">
+        
+       <h3>Create new Account</h3>
+    
+    <form method="POST" action="register.php">
+    <div class="inputFields"><input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <input type="text" name="cPassword" placeholder="Confirm password"/>
+         <button class="active-btn" type="submit"><span>Register</span></button></div>
+       
+    </form>
+    </div>
+</div>
+<div class="container"><h2>About gwitter</h2></div>
+    
 
-</html>
+
 
 <?php
-
-    
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-
-$UserExists = 0;
-$db = new SQLite3('database/gwitter.db');
-
-$results = $db->query('SELECT * FROM Users');
-while ($row = $results->fetchArray()) {
-   if ($row['Username'] == $username && $row['Password'] == $password) {
-        session_start();
-        $_SESSION["username"] = $username;
-        $UserExists = 1;
-        header("Location: /profile.php");
-        break;
-    } 
-}
-if ($UserExists != 1){
-    
-        echo "User not found! <br/>";
-        die();
-
-}
+require_once 'includes/footer.php';
 ?>
