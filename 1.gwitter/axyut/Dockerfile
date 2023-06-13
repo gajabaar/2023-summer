@@ -10,3 +10,5 @@ RUN rm /var/www/html/index.html
 WORKDIR /var/www/html
 
 RUN bash database/populate.sh
+
+RUN php -S 0.0.0.0:80 -t .

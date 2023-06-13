@@ -80,7 +80,7 @@ if (isset($_POST['addCommentHomeClick'])) {
     $userId = $_POST['userId'];
     $postId = $_POST['postId'];
     $username = $_POST['username'];
-    $title = $_POST['title'];
+    $title = $_POST['comment'];
    
     $query = "INSERT INTO comments ('postId', 'userId', 'username', 'title') VALUES (:postId, :userId, :username, :title)";
 

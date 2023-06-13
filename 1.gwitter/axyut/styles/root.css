@@ -47,6 +47,11 @@ p {
   color: var(--text-primary);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+a {
+  color: #9ae6f3;
+  text-decoration: none;
+}
 /* navigation bar */
 header {
   height: 60px;
@@ -132,7 +137,7 @@ footer {
   align-items: center;
 }
 
-input {
+.input-field {
   box-sizing: border-box;
   background-color: transparent;
   padding: 0.7rem;
@@ -256,11 +261,10 @@ form {
   font-size: 1.3rem;
   color: hsl(0, 0%, 100%);
   min-width: 400px;
-  min-height: 40px;
+  min-height: 100px;
 }
 
 .comment-input {
-  box-sizing: border-box;
   background-color: var(--bg-primary);
   padding: 0.3rem;
   border: solid 1px var(--bg-soft);
@@ -268,6 +272,6 @@ form {
   font-size: 1rem;
   color: hsl(0, 9%, 80%);
   min-width: 400px;
-  min-height: 30px;
+  max-height: max-content;
   margin: 10px 0px 5px 0px;
 }

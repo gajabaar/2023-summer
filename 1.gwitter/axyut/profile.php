@@ -24,22 +24,26 @@ $username = $_SESSION["username"];
                         $username = $row['username'];
                         $postId = $row['postId'];
                         echo "<label>".$username." 
-                        <form action='delete_edit_comment.php' method='POST'> 
-                            <input type='hidden' name='userId' value='$userId'>
-                            <input type='hidden' name='postId' value='$postId'>
-                            <input type='hidden' name='username' value='$username'>
-                            <textarea class='edit-textarea' name='title'>".$title."</textarea><br/> 
-                            
-                            <button class='input-button' style='float:right;' name='deleteClick' type='submit'>
-                                Delete
-                            </button> 
-                            <button class='input-button' style='float:right;' name='editClick' type='submit'>
-                                Edit
-                            </button> 
-                            <input class='comment-input' name='comment' placeholder='My comment' /> 
-                            <button style='float:right;' class='input-button' name='addCommentClick'>
-                                Add
-                            </button>
+                        <form action='delete_edit_comment.php' method='POST'>
+                        <div style='display:flex;align-items:flex-start;flex-direction: row;'>  
+                        <input type='hidden' name='userId' value='$userId'>
+                        <input type='hidden' name='postId' value='$postId'>
+                        <input type='hidden' name='username' value='$username'>
+                        <textarea class='edit-textarea' name='title' >".$title."</textarea><br/> 
+                        
+                        <button class='input-button' style='float:right;' name='deleteClick' type='submit'>
+                            Delete
+                        </button> 
+                        <button class='input-button' style='float:right;' name='editClick' type='submit'>
+                            Edit
+                        </button> 
+                        </div>
+                        <div style='display:flex;flex-direction: row;justify-content: center;align-items: center;' >  
+                        <input class='comment-input' name='comment' placeholder='My comment' /> 
+                        <button style='float:right;' class='input-button' name='addCommentClick'>
+                            Add
+                        </button>
+                        </div>
                         </form>
                         <form action='profile.php' method='POST'>
                             <input type='hidden' name='userId' value='$userId'>
@@ -47,7 +51,8 @@ $username = $_SESSION["username"];
                             <button class='input-button' name='showCommentsClick' type='submit'>
                                 Show All Comments
                             </button>
-                        </form>";
+                        </form>
+                            ";
                        
                         echo "</label> ";
                     }
@@ -75,7 +80,7 @@ $username = $_SESSION["username"];
                                 $title = $row['title'];
                                 echo "
                                 <label>".$username."
-                                    <input class='comment-input' name='comment' value='$title' />
+                                <p>$title </p>
                                 </label>
                                 ";
                             }
@@ -94,14 +99,14 @@ $username = $_SESSION["username"];
             <td>
             
             <?php   
-                    echo "<h3>Followers</h3>";
+                    
                     $query = "SELECT username,userId FROM users WHERE userId IN (SELECT followerId from followers WHERE userId=:userId )";
                     
                     $stmt = $db->prepare($query);
                     $stmt->bindValue(':userId', $userId);
                     
                     $result = $stmt->execute();
-                    echo "<label>";
+                    echo "<label><h3>Followers</h3>";
                     $count = 1;
                     while ($row = $result->fetchArray()) {
                         $username = $row['username'];
@@ -118,14 +123,14 @@ $username = $_SESSION["username"];
                         $count +=1;
                     }
                     echo "</label>";
-                    echo "<h3>Following</h3>";
+                    
                     $query = "SELECT username,userId FROM users WHERE userId IN (SELECT followingId from followings WHERE userId=:userId )";
                     
                     $stmt = $db->prepare($query);
                     $stmt->bindValue(':userId', $userId);
                     
                     $result = $stmt->execute();
-                    echo "<label>";
+                    echo "<label><h3>Following</h3>";
                     $count = 1;
                     while ($row = $result->fetchArray()) {
                         $username = $row['username'];

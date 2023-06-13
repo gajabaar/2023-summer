@@ -55,7 +55,6 @@ $userId = $_SESSION["userId"];
                     $result = $stmt->execute();
                     while ($row = $result->fetchArray()) {
                         $title = $row['title'];
-                        $username = $row['username'];
                         $postId = $row['postId'];
                         echo "<label>"
                             .$username."<p>".$title."</p>
@@ -64,13 +63,14 @@ $userId = $_SESSION["userId"];
                             <input type='hidden' name='userId' value='$userId'>
                             <input type='hidden' name='postId' value='$postId'>
                             <input type='hidden' name='username' value='$username'>
-                            <input type='hidden' name='title' value='$title'>
+                            <div style='display:flex;flex-direction: row;justify-content: center;align-items: center;' > 
                             <input class='comment-input' name='comment' placeholder='My comment' /> 
                                 <button style='float:right;' class='input-button' name='addCommentHomeClick'>
                                     Add
                                 </button>
                                 
                             </form>
+                            </div>
                             <form action='home.php' method='POST'>
                                 <input type='hidden' name='userId' value='$userId'>
                                 <input type='hidden' name='postId' value='$postId'>
@@ -104,7 +104,7 @@ $userId = $_SESSION["userId"];
                              $title = $row['title'];
                              echo "
                              <label>".$username."
-                                 <input class='comment-input' name='comment' value='$title' />
+                                 <p>$title </p>
                              </label>
                              ";
                          }
