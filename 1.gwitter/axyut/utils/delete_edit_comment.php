@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3("database/gwitter.db");
+$db = new SQLite3("../database/gwitter.db");
 
 if (isset($_POST['editClick'])) {
     $userId = $_POST['userId'];
@@ -17,11 +17,11 @@ if (isset($_POST['editClick'])) {
 
     if ($result) {
         
-        header("Location: profile.php?msg=EditSuccessfull");
+        header("Location: ../pages/profile.php?msg=EditSuccessfull");
         exit();
     } else {
         
-        header("Location: profile.php?msg=Error!tryAgain");
+        header("Location: ../pages/profile.php?msg=Error!tryAgain");
         exit();
     }
 }
@@ -40,11 +40,11 @@ if (isset($_POST['deleteClick'])) {
 
     if ($result) {
         
-        header("Location: profile.php?msg=DeletionSuccessfull");
+        header("Location: ../pages/profile.php?msg=DeletionSuccessfull");
         exit();
     } else {
         
-        header("Location: profile.php?msg=Error!tryAgain");
+        header("Location: ../pages/profile.php?msg=Error!tryAgain");
         exit();
     }
 }
@@ -67,11 +67,11 @@ if (isset($_POST['addCommentClick'])) {
 
     if ($result) {
         
-        header("Location: profile.php?msg=CommentPostedSuccessfully");
+        header("Location: ../pages/profile.php?msg=CommentPostedSuccessfully");
         exit();
     } else {
         
-        header("Location: profile.php?msg=Error!tryAgain");
+        header("Location: ../pages/profile.php?msg=Error!tryAgain");
         exit();
     }
 }
@@ -94,11 +94,11 @@ if (isset($_POST['addCommentHomeClick'])) {
 
     if ($result) {
         
-        header("Location: home.php?msg=CommentPostedSuccessfully");
+        header("Location: ../pages/home.php?msg=CommentPostedSuccessfully");
         exit();
     } else {
         
-        header("Location: home.php?msg=Error!tryAgain");
+        header("Location: ../pages/home.php?msg=Error!tryAgain");
         exit();
     }
 }

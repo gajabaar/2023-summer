@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3("database/gwitter.db");
+$db = new SQLite3("../database/gwitter.db");
 
 if (isset($_POST['followClick'])) {
     $userId = $_POST['userId'];
@@ -16,11 +16,11 @@ if (isset($_POST['followClick'])) {
 
     if ($result) {
         
-        header("Location: home.php?msg=FollowSuccessfull");
+        header("Location: ../pages/home.php?msg=FollowSuccessfull");
         exit();
     } else {
         
-        header("Location: home.php?msg=Error!tryAgain");
+        header("Location: ../pages/home.php?msg=Error!tryAgain");
         exit();
     }
 }
@@ -40,11 +40,11 @@ if (isset($_POST['unfollowClick'])) {
 
     if ($result) {
         
-        header("Location: profile.php?msg=UnfollowSuccessfull");
+        header("Location: ../pages/profile.php?msg=UnfollowSuccessfull");
         exit();
     } else {
         
-        header("Location: profile.php?msg=Error!tryAgain");
+        header("Location: ../pages/profile.php?msg=Error!tryAgain");
         exit();
     }
 }
@@ -64,11 +64,11 @@ if (isset($_POST['removeClick'])) {
 
     if ($result) {
         
-        header("Location: profile.php?msg=Removed$followerUsername");
+        header("Location: ../pages/profile.php?msg=Removed$followerUsername");
         exit();
     } else {
         
-        header("Location: profile.php?msg=Error!tryAgain");
+        header("Location: ../pages/profile.php?msg=Error!tryAgain");
         exit();
     }
 }

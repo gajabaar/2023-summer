@@ -1,9 +1,13 @@
 
-<?php session_start(); 
-require_once 'includes/header.php';
-$db = new SQLite3("database/gwitter.db");
+<?php 
+session_start(); 
+
+require_once '../includes/header.php';
+$db = new SQLite3("../database/gwitter.db");
+
 $userId = $_SESSION["userId"];
 $username = $_SESSION["username"];
+
 ?>
 
 <div class="profile-container">
@@ -24,7 +28,7 @@ $username = $_SESSION["username"];
                         $username = $row['username'];
                         $postId = $row['postId'];
                         echo "<label>".$username." 
-                        <form action='delete_edit_comment.php' method='POST'>
+                        <form action='../utils/delete_edit_comment.php' method='POST'>
                         <div style='display:flex;align-items:flex-start;flex-direction: row;'>  
                         <input type='hidden' name='userId' value='$userId'>
                         <input type='hidden' name='postId' value='$postId'>
@@ -45,7 +49,7 @@ $username = $_SESSION["username"];
                         </button>
                         </div>
                         </form>
-                        <form action='profile.php' method='POST'>
+                        <form action='../pages/profile.php' method='POST'>
                             <input type='hidden' name='userId' value='$userId'>
                             <input type='hidden' name='postId' value='$postId'>
                             <button class='input-button' name='showCommentsClick' type='submit'>
@@ -112,7 +116,7 @@ $username = $_SESSION["username"];
                         $username = $row['username'];
                         $publicUserId = $row['userId'];
                         echo "<label>".$count.". ".$username." 
-                        <form action='follow_unfollow.php' method='POST'> 
+                        <form action='../utils/follow_unfollow.php' method='POST'> 
                             <input type='hidden' name='userId' value='$userId'>
                             <input type='hidden' name='followerId' value='$publicUserId'>
                             <input type='hidden' name='followerUsername' value='$username'>
@@ -136,7 +140,7 @@ $username = $_SESSION["username"];
                         $username = $row['username'];
                         $publicUserId = $row['userId'];
                         echo "<label>".$count.". ".$username." 
-                            <form action='follow_unfollow.php' method='POST'> 
+                            <form action='../utils/follow_unfollow.php' method='POST'> 
                                 <input type='hidden' name='userId' value='$userId'>
                                 <input type='hidden' name='followingId' value='$publicUserId'>
                                 <input type='hidden' name='followingUsername' value='$username'>
@@ -163,5 +167,5 @@ $username = $_SESSION["username"];
 
 <?php
 
-require_once 'includes/footer.php';
+require_once '../includes/footer.php';
 ?>

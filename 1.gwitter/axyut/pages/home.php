@@ -1,8 +1,8 @@
 <?php
 session_start(); 
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 
-$db = new SQLite3("database/gwitter.db");
+$db = new SQLite3("../database/gwitter.db");
 
 $username = $_SESSION["username"];
 $userId = $_SESSION["userId"];
@@ -14,7 +14,7 @@ $userId = $_SESSION["userId"];
         
         <tr>
             <td>
-                <form action="home.php" method="post">
+                <form action="../pages/home.php" method="post">
                     <textarea class="input-gweet" type="text" name="title" placeholder="Title">What's on your mind?</textarea>
                     <br/><button class="active-btn" type="submit"><span>Gweet</span></button> 
                     
@@ -33,20 +33,17 @@ $userId = $_SESSION["userId"];
                         $result = $stmt->execute();
                         if ($result) {
                            
-                            header("Location: home.php?msg=PostSuccessfull");
+                            header("Location: ../pages/home.php?msg=PostSuccessfull");
                             exit();
                         } else {
                 
-                            header("Location: home.php?msg=Error!tryAgain");
+                            header("Location: ../pages/home.php?msg=Error!tryAgain");
                             exit();
                         }
                     }?>
 
                 <h3>Following feed</h3>
                 <?php
-                    $db = new SQLite3("database/gwitter.db");
-
-                    $userId = $_SESSION["userId"];
                     $query = "SELECT * FROM posts WHERE userId IN (SELECT followingId from followings WHERE userId=:userId )";
                     
                     $stmt = $db->prepare($query);
@@ -59,7 +56,7 @@ $userId = $_SESSION["userId"];
                         echo "<label>"
                             .$username."<p>".$title."</p>
                             <br/>
-                            <form action='delete_edit_comment.php' method='POST'> 
+                            <form action='../utils/delete_edit_comment.php' method='POST'> 
                             <input type='hidden' name='userId' value='$userId'>
                             <input type='hidden' name='postId' value='$postId'>
                             <input type='hidden' name='username' value='$username'>
@@ -71,7 +68,7 @@ $userId = $_SESSION["userId"];
                                 
                             </form>
                             </div>
-                            <form action='home.php' method='POST'>
+                            <form action='../pages/home.php' method='POST'>
                                 <input type='hidden' name='userId' value='$userId'>
                                 <input type='hidden' name='postId' value='$postId'>
                                 <button class='input-button' name='showCommentsClick' type='submit'>
@@ -137,7 +134,7 @@ $userId = $_SESSION["userId"];
                         $username = $row['username'];
                         $publicUserId = $row['userId'];
                         echo "<label>".$count.". ".$username."
-                            <form action='follow_unfollow.php' method='POST'> 
+                            <form action='../utils/follow_unfollow.php' method='POST'> 
                                 <input type='hidden' name='userId' value='$userId'>
                                 <input type='hidden' name='followingId' value='$publicUserId'>
                                 <input type='hidden' name='followingUsername' value='$username'>
@@ -158,5 +155,5 @@ $userId = $_SESSION["userId"];
 
 </div>
 <?php
-require_once 'includes/footer.php';
+require_once '../includes/footer.php';
 ?>

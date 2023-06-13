@@ -16,13 +16,13 @@
                <div>
                 <ul>
                 <li>
-                    <a href="../home.php">Home</a>
+                    <a href="../pages/home.php">Home</a>
                 </li>
                 <li>
-                    <a href="../profile.php">Profile</a>
+                    <a href="../pages/profile.php">Profile</a>
                 </li>
                 <li>
-                    <a href="../logout.php">Logout</a>
+                    <a href="../utils/logout.php">Logout</a>
                 </li>
             </ul>
                </div>

@@ -5,7 +5,7 @@ require_once 'includes/header.php';
     
 <div class="container">
        <h3>Login to your account</h3>
-    <form method="POST" action="login.php">
+    <form method="POST" action="utils/login.php">
         <div class="inputFields">
        
         <input  class="input-field"  type="text" name="username" placeholder="Username"/>
@@ -20,7 +20,7 @@ require_once 'includes/header.php';
         
        <h3>Create new Account</h3>
     
-    <form method="POST" action="register.php">
+    <form method="POST" action="utils/register.php">
     <div class="inputFields">
         <input class="input-field" type="text" name="username" placeholder="Username"/>
         <input class="input-field" type="text" name="password" placeholder="Password"/>
