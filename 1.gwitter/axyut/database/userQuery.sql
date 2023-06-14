@@ -1,14 +1,14 @@
 
 -- Create User
-INSERT INTO Users ("Username", "Password") VALUES 
+INSERT INTO users ("Username", "Password") VALUES 
 ( "<USERNAME>", "<PASSWORD>");
 
 -- Create Post
-INSERT INTO Posts ("UserId", "Title") VALUES 
+INSERT INTO posts ("UserId", "Title") VALUES 
 (<YourUserId>, "<Title>");
 
 -- Create Comment 
-INSERT INTO Comments ("PostId", "UserId", "Title") VALUES 
+INSERT INTO comments ("PostId", "UserId", "Title") VALUES 
 (<PostId>, <YourUserId>, "<Comment>");
 
 -- Show all post of particular user
