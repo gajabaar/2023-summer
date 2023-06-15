@@ -1,0 +1,62 @@
+/* index.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  h1.signup {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .form {
+    border: 5px solid;
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  form input {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .isauser {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .isauser a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .isauser a:hover {
+    text-decoration: underline;
+  }
+  .error-message {
+    color: rgb(21, 20, 20);
+    text-align: center;
+    margin-top: 10px;
+  }
