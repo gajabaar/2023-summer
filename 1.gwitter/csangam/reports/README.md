@@ -7,6 +7,11 @@ A database for Gwitter is designed and implemented. Files containing the
 sql statements for creating the database `Gwitter.sql` and for populating the
 database with data are created `data.sql` 
 
+### Week 2 - PHP Essentials
+- PHP fundamentals (how it generates dynamic content)
+- PHP interactions (how it processes form data)
+- PHP infrastructure (how it connects to a database service)
+- Introduction to PHP interpreter
 
-
-## Week 2 - PHP Essentials
+### Week 3 - Gwitter
+Complete Gwitter Application is developed and containerized
