@@ -4,15 +4,15 @@ DROP TABLE IF EXISTS followers;
 
 CREATE TABLE users(
 	uid INTEGER primary key AUTOINCREMENT,
-	username varchar(25) unique,
+	username varchar(25) NOT NULL unique,
 	password varchar(30)
 );
 
 CREATE TABLE gweets( 
 	uid INTEGER  primary key AUTOINCREMENT,
 	gweet text,
-	user_id INTEGER,
-	FOREIGN KEY (user_id) REFERENCES users(uid) ON DELETE CASCADE
+	username VARCHAR(30) NOT NULL,
+	FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
 );
 CREATE TABLE followers(
 	uid INTEGER,
@@ -32,12 +32,12 @@ VALUES
     ("user", "user")
     ;
     
-INSERT INTO gweets (gweet, user_id)
+INSERT INTO gweets (username, gweet)
 VALUES
-    ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, distinctio?", 1),
-    ("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dicta est excepturi voluptatum totam ut quod voluptate voluptas eveniet officia.", 2),
-    ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nihil nobis aliquam eaque itaque repudiandae!", 2),
-    ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, voluptatem.", 2)
+    ("user1","Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, distinctio?"),
+    ("user2","Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dicta est excepturi voluptatum totam ut quod voluptate voluptas eveniet officia."),
+    ("user3","Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nihil nobis aliquam eaque itaque repudiandae!"),
+    ("user","Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, voluptatem.")
     ;
 
 INSERT INTO followers (uid, followed_by)

@@ -25,7 +25,7 @@ The database was designed with sqlite3.
 
 `vi gweet.sql` or any other text editor and write scripts in it as shown in gweet.sql
 `sqlite3` - to run sql client
-`.read gweet,sqk
+`.read gweet.sql`
 `sqlite3 gweet.db`
 `.read gweet.sql`
 then code inside the file gweet.sql will be automatically updated
