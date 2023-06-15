@@ -69,3 +69,23 @@ For this I created the following files:
 #### 5. [logout.php](../logout.php):
 
 - Logout and clear session.
+
+
+# Week 3:
+
+**The task for this week was to make docker file and build script file**
+
+For this I created 2 files:
+
+#### 1. [build-docker.sh](../build-docker.sh):
+
+- This removes any existing image named `gwitter-sudru`.
+- Builds image from the Dockerfile.
+- Then run the application from the image at `http://localhost:8080`.
+
+#### 2. [Dockerfile](../Dockerfile):
+- Starts from php:8.1 as base image.
+- Copy all the application files into the image.
+- Installs the necessary dependency for sqlite3 in the system.
+- Load schema into the database and also insert dummy gweets.
+- Then runs application with command `php -S localhost:80`.
