@@ -46,13 +46,20 @@ you will also need to provide a Dockerfile
 that will install and run your application.
 
 ### Week 4 - Vulnerability Scanning w/ OpenVAS
-This week, we will ask you to pair with someone and 
-do a security scan of their application using openvas.
-Then pick a vulnerability that openvas reports (or doesn't report
-but you know from reading their source code that it's a vulnerability)
+1. Pick an application that you will test from the gwitter submissions
+then reserve your picking at the self reporting google sheet
+(link is pinned to the discord channel).
+2. Scan the application you chose with openvas. Think about credentialed
+and non-credentialed scan and if it helps to rerun scans more findings you find.
+4. Pick a vulnerability class you will do a deep dive into then
+report this on the self-report google sheet.
+
+Pick a vulnerability that openvas reports (or doesn't report
+but you know from reading their source code or via other means
+that it's a vulnerability)
 then do a deep dive on how you can exploit that vulnerability.
 
-We will release instructions over discord on how to pair with someone.
+You will also be required to do additional labs on this vulnerability.
 
 ## Resources
 [Week 1 - SQLite Essentials]
@@ -76,7 +83,10 @@ at a high level overview
 [Week 4 - Vulnerability Scanning w/ OpenVAS]
 - [Source Repository](https://github.com/greenbone/openvas-scanner)
 - [OpenVAS Docker Container](https://hub.docker.com/r/greenbone/openvas-scanner)
-- The meeting this week will cover getting started with OpenVAS
+- [Offensive Security Sample Report](https://www.offsec.com/pwk-online/PWK-Example-Report-v1.pdf)
+- [Offensive Security Template](https://help.offsec.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements)
+- Real World Bug Hunting (book)
+- [Port Swigger Web Academy](https://portswigger.net/web-security/learning-path)
 
 ## Submission
 
@@ -93,8 +103,12 @@ to create and populate this database with some test data.
 wrote this week. 
 - Week 3: Submit a report on your progress along with the code you
 wrote this week.
-- Week 4: Submit a report detailing the vulnerabilities you found
-and vulnerabilities you chose to do a deep dive on.
+- Week 4: 
+  - Submit a report detailing the vulnerabilities you found on the application you tested **Report the commit hash of the application 
+  that you tested -- pick a hash committed AFTER Tuesday June 20, 2023**
+  - Submit a link to notion page that shows your notes from Real World Bug Hunting book on the vulnerability of your choice
+  - Submit a link to notion page that shows your notes from Web Academy on the vulnerability of your choice
+and vulnerabilities you chose to do a deep dive on. We expect you to finish the labs on this topic.
 
 One possible final organization of files is as follows
 - /1.gwitter/bhakku
