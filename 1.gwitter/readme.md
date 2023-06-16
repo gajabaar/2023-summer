@@ -1,114 +1,118 @@
-# Designing a Simple Database for a Gwitter
+One the first module, you will build an application of your own.
+The application will be similar in feature to twitter,
+but we will call it gwitter.
+Your users will be able to sign up, sign in and sign out.
+Once signed in, they will be able to follow other users.
+On their home page, they will be able to see the feed
+of tweets from people that they follow.
+Your users should also be able to see their own profile
+and tweets.
 
-## Introduction
+## Objective
 
-This is how I designed a simple database using sqlite3 for a Twitter-like app named "Gwitter". The database includes tables for users, tweets, likes, retweets, shares, followers, and followings.
+Get familiar with the web technology and the development process.
 
-## Tables
+## Tasks
 
-### Users
+### Week 1 - SQLite Essentials
+The goal this week is to get working idea on what a database system is,
+and how it works. For this, we have picked SQLite, primarily because
+it's light-weight and easy to get up and running.
 
-The `users` table stores information about each user, including their unique ID, username, password, email, and the timestamp of when their account was created.
+Your task is to design and implement a database for Gwitter.
+You will need to think about what information you want to store,
+then write SQL statements to create database that will store
+this information.
 
-```sql
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    username TEXT NOT NULL,
-    password TEXT NOT NULL,
-    email TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+### Week 2 - PHP Essentials
+For this week, take some time to explore php. 
+Start working on user sign up, sign in, sign out.
+Figure out how to connect to a database using PHP
+and use it.
 
-### Tweets
+- PHP fundamentals (how it generates dynamic content)
+- PHP interactions (how it processes form data)
+- PHP infrastructure (how it connects to a database service)
+- Introduction to PHP interpreter
 
-The `tweets` table stores information about each tweet, including the unique ID of the tweet, the ID of the user who created the tweet, the content of the tweet, and the timestamp of when the tweet was created.
+### Week 3 - Gwitter
+This is an additional week to continue work on Gwitter,
+perhaps add a CSS framework to make it look prettier,
+perhaps add a feature that you think would be cool,
+perhaps do some bug fixes.
 
-```sql 
-CREATE TABLE tweets (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    user_id INTEGER NOT NULL,
-    content TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-```
+Keep in mind that by the end of this week,
+you will also need to provide a Dockerfile
+that will install and run your application.
 
-### Likes
+### Week 4 - Vulnerability Scanning w/ OpenVAS
+This week, we will ask you to pair with someone and 
+do a security scan of their application using openvas.
+Then pick a vulnerability that openvas reports (or doesn't report
+but you know from reading their source code that it's a vulnerability)
+then do a deep dive on how you can exploit that vulnerability.
 
-The `likes` table stores information about each like, including the unique ID of the action, the ID of the user who performed the action, the ID of the tweet that was liked, and the timestamp of when the action was performed.
+We will release instructions over discord on how to pair with someone.
 
-```sql 
-CREATE TABLE likes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    user_id INTEGER NOT NULL,
-    tweet_id INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (tweet_id) REFERENCES tweets(id)
-);
-```
+## Resources
+[Week 1 - SQLite Essentials]
+- Likely, you will need the following tables for your application.
+    - User (username, password)
+    - followed\_by (username, follows)
+    - Gweet (username, gweet)
+- [Installing and Using SQLite on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04)
+- [SQLite Documentation](https://www.sqlite.org/docs.html)
+- [SQL Playground](https://www.db-fiddle.com/)
+- During meeting this week, we will go over sqlite ourselves to look
+at a high level overview
 
-### Retweets
+[Week 2 - PHP Essentials]
+- [PHP Manual](https://www.php.net/manual/en/intro-whatis.php)
+- [PHP Tutorial](https://www.w3schools.com/php/)
+- The meeting this week will cover Getting Started with PHP.
 
-The `retweets` table stores information about each retweet, including the unique ID of the action, the ID of the user who performed the action, the ID of the tweet that was retweeted, and the timestamp of when the action was performed.
+[Week 3 - Gwitter]
 
-```sql 
-CREATE TABLE retweets (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    user_id INTEGER NOT NULL,
-    tweet_id INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (tweet_id) REFERENCES tweets(id)
-);
-```
+[Week 4 - Vulnerability Scanning w/ OpenVAS]
+- [Source Repository](https://github.com/greenbone/openvas-scanner)
+- [OpenVAS Docker Container](https://hub.docker.com/r/greenbone/openvas-scanner)
+- The meeting this week will cover getting started with OpenVAS
 
-### Shares
+## Submission
 
-The `shares` table stores information about each share, including the unique ID of the action, the ID of the user who performed the action, the ID of the tweet that was shared, and the timestamp of when the action was performed.
+You are expected to submit a progress report at the end of each week.
+Work on a branch on the format `git checkout -b task1/week1` and
+send this in for pull request. All files are expected to be inside
+a folder with your username, same as previous tasks.
 
-```sql
-CREATE TABLE shares (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    user_id INTEGER NOT NULL,
-    tweet_id INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (tweet_id) REFERENCES tweets(id)
-);
-```
+- Week 1: Submit a report detailing your database design and why you
+have designed it that way. The report should be inside `reports` folder.
+Also submit .sql with SQL statements that can be run without errors 
+to create and populate this database with some test data. 
+- Week 2: Submit a report on your progress along with the code you
+wrote this week. 
+- Week 3: Submit a report on your progress along with the code you
+wrote this week.
+- Week 4: Submit a report detailing the vulnerabilities you found
+and vulnerabilities you chose to do a deep dive on.
 
-### Followers
+One possible final organization of files is as follows
+- /1.gwitter/bhakku
+    - /database
+        - README.md (details your database design and how to run the sql files)
+        - users.sql
+        - gweets.sql
+    - /reports
+        - README.md [has sections for week1, week2, ...]
+    - home.php
+    - profile.php
+    - Dockerfile
+    - build\_docker.sh
+    - README.md (describe the general application, installation, usage)
 
-The `followers` table stores information about each follower relationship, including the unique ID of the relationship, the ID of the follower, the ID of the followee, and the timestamp of when the relationship was created.
+## Miscellaneous
 
-```sql
-CREATE TABLE followers (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    follower_id INTEGER NOT NULL,
-    followee_id INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (follower_id) REFERENCES users(id),
-    FOREIGN KEY (followee_id) REFERENCES users(id)
-);
-```
+We recommend doing the Advent of Cyber room on Try Hack Me from the
+past year to have general ideas on fundamental web security issues.
 
-### Followings
-
-The `followings` table stores information about each followee relationship, including the unique ID of the relationship, the ID of the follower, the ID of the followee, and the timestamp of when the relationship was created.
-
-```sql
-CREATE TABLE followings (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    follower_id INTEGER NOT NULL,
-    followee_id INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (follower_id) REFERENCES users(id),
-    FOREIGN KEY (followee_id) REFERENCES users(id)
-);
-```
-
-## Conclusion
-
-With these tables, we can create a simple database to store and retrieve user information, tweets, likes, retweets, shares, and follower/following relationships for "Gwitter".
+We also recommend working on overthewire natas wargame.
