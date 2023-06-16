@@ -1,14 +1,14 @@
 INSERT INTO Users (UserName, Password, FullName, Bio) VALUES
-("sulabhghimire",  "sulabhadmin", "Sulabh Ghimire", "Hello, I am an engineering student"),
-("sagarsubedi",  "sagaradmin", "Sagar Subedi", "Hello, I am a actor"),
-("sureshsir",  "sureshadmin", "Suresh Panth", "Hello, I am a cyver security student"),
-("drddesign",  "dayaadmin", "Daya Raj Dhungana", "Hello, I am a designing student and a CR"),
-("anupak",  "anupadmin", "Anup Adhikari", "Hello, I am a project management student"),
-("modernbib",  "bibekadmin", "Bibek Chalise", "Hello, I am an AI and machine learning student"),
-("shushiljinx",  "shushiladmin", "Shushil Poudel", "Hello, I am a rich student"),
-("eldringrg",  "eldrinadmin", "Eldrin Gurung", "Hello, I am an overall knowledge student"),
-("prashantpnt",  "prashantadmin", "Prashant Pant", "Hello, I am a devotee student"),
-("krishna",  "krishnaadmin", "Krishna Parsad Tamang", "Hello, I am an old student");
+("sulabhghimire",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Sulabh Ghimire", "Hello, I am an engineering student"),
+("sagarsubedi",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Sagar Subedi", "Hello, I am a actor"),
+("sureshsir",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Suresh Panth", "Hello, I am a cyver security student"),
+("drddesign",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Daya Raj Dhungana", "Hello, I am a designing student and a CR"),
+("anupak",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Anup Adhikari", "Hello, I am a project management student"),
+("modernbib",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Bibek Chalise", "Hello, I am an AI and machine learning student"),
+("shushiljinx",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Shushil Poudel", "Hello, I am a rich student"),
+("eldringrg",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Eldrin Gurung", "Hello, I am an overall knowledge student"),
+("prashantpnt",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Prashant Pant", "Hello, I am a devotee student"),
+("krishna",  "$2y$10$wPG4cEHdHH8H05H7CBojueJlL2FrybuIAuN27/kjREFj2Q42agYtC", "Krishna Parsad Tamang", "Hello, I am an old student");
 
 INSERT INTO Posts (UserID, content) VALUES
 (1, "Engineering is the use of scientific principles to design and build machines, structures, and other items, including bridges, tunnels, roads, vehicles, and buildings.[1] The discipline of engineering encompasses a broad range of more specialized fields of engineering, each with a more specific emphasis on particular"),
