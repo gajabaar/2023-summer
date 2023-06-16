@@ -30,31 +30,133 @@ $results = $statement->execute();
 
 
 ?>
+
 <html>
-<a href="logout.php">Logout</a>
-Hello,<a href="profile.php?val=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username'] ?></a>
-<br><br>
-<h2>Add Something New : </h2>
-<form action="homepage.php" method="post">
-<textarea type="text" name="cont"></textarea>
-<br><br>
-        <input type="submit" value="Update">
-</form>
-<h2>All posts  : </h2>
-<?php
+<head>
+    <title>Gwitter - HomePage</title>
+    <style>
+    body
+    {
+        margin: 0;
+        padding: 0;
+        background-color:#6abadeba;
+        font-family: 'Arial';
+    }
+    .main{
+            width: 800px;
+            overflow: hidden;
+            margin: 20 0 0 200px;
+            padding: 80px;
+            background: #23463f;
+            border-radius: 15px ;
+            align : center;
+    }
+    #homeid{
+        text-align: left;
+        color: #277582;
+        padding: 20px;
+    }
+    label{
+        color: #08ffd1;
+        font-size: 17px;
+    }
+    #Uname{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+    #Pass{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
+    #log{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+
+
+    }
+    span{
+        color: white;
+        font-size: 17px;
+    }
+    a{
+        background-color: none;
+        color: white;
+    }
+    #error{
+        background-color : white;
+        color : red;
+        height : 30px;
+        text-align : center;
+        margin-top : 10px;
+    }
+    #Box{
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
+    #helper{
+        font-size : 20px;
+    }
+    #content {
+        color : white;
+    }
+    </style>
+</head>
+<body>
+    <h2 id="homeid"><a href="homepage.php">Gwitter</a>
+        <br>
+        <div id="helper">
+        <a href="logout.php">Logout</a>
+        Hello,<a href="profile.php?val=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username'] ?>
+        </a>
+    </div>
+    </h2>
+    
+    <div class="main">
+    
+    <?php if (isset($_GET['error'])) { ?>
+        <div id="error">
+        <p class="error"><?php echo $_GET['error']; ?></p>
+        </div>
+        <?php } ?>
+    
+    <form id="login" method="Post" action="homepage.php">
+        <textarea type="text" name="cont" rows="10" cols="100" placeholder="What's On Your Mind" id="Box" required></textarea>
+        <br><br>
+        <input type="submit" id="log" value="Tweet">
+    </form>
+
+    <h3 style="color : white;">Tweets From People You Follow</h3>
+    <div id="content">
+    <?php
     while ($row = $results->fetchArray()) {
         //var_dump($row);
         $query = "SELECT UserName FROM Users WHERE UserID = :udi";
         $statement = $database->prepare($query);
         $statement->bindValue(':udi', $row['UserID']);
         $resu = $statement->execute();
-        $rows = $resu -> fetchArray();
-
-        echo 'Post ID: ' . $row['PostID'] . ' Posted By: ' . $rows['UserName'] . ' On : ' . $row['createdAt'];
-        echo "<br>";
+        $rows = $resu -> fetchArray();   
+        echo "By : ". $rows['UserName']. "<br>";
+        echo "On : ". $row['createdAt']. "<br>";
         echo $row['content'];
-        echo "<br><br><br>";
+        echo "<br><br>
+        <br>";
     }
+    
 ?>
-
+</div>
+</div>
+</body>
 </html>

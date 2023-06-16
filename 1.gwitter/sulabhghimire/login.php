@@ -16,24 +16,30 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM Users WHERE UserName = :username AND Password = :password";
+    $query = "SELECT * FROM Users WHERE UserName = :username";
     $statement = $database->prepare($query);
     $statement->bindValue(':username', $username);
-    $statement->bindValue(':password', $password);
     $results = $statement->execute();
 
     $row = $results -> fetchArray();
 
     if (empty($row)) {
-        header("Location: index.php?error=Wrong password or email.");
+        header("Location: index.php?error=Wrong username.");
         exit();
     } else {
-        $user_id = $row['UserID'];
-        $user_name = $row['UserName'];
-        $_SESSION['user_id'] = $user_id;
-        $_SESSION['username'] = $user_name;
-        header("Location: homepage.php");
-        exit();
+        $verify = password_verify($password, $row['Password']);
+        if ($verify){
+            $user_id = $row['UserID'];
+            $user_name = $row['UserName'];
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['username'] = $user_name;
+            header("Location: homepage.php");
+            exit();
+        }else{
+            header("Location: index.php?error=Wrong Password.");
+            exit();
+        }
+       
     }
 }
 if (empty($_POST['username'])) {
