@@ -44,13 +44,16 @@ This project is build with following languages and framework
 - sqlite3
 - PHP
 - Docker
-- Kubernetes
-- minikube
-- skaffold
 
 ### Installation
 
 Follow the following commands to set up in your local machine.
+
+`cd /1.Gwitter/axyut/`
+<br/>
+`bash build-docker.sh`
+<br/>
+Go to docker container ip at port 80
 
 ## App
 
@@ -98,3 +101,25 @@ Final organization of files is as follows
 ## Working
 
 Preview of how the website is supposed to function.
+
+- ### Gwitter Front page
+  - #### Login, Register
+    You can Login, register and read about Gwitter's policy, its wokrking mechanism and its views.
+    ![Gwitter FrontPage](./assets/fullWeb)
+  - #### About
+    ![About Gwitter ](./assets/aboutGwitter.png)
+- ### Home Page
+  All the gweets from the people you follow will appear here also you can post gweets and comment on other's gweets here. At side, People you may know will appear and you can follow them pressing the follow button.
+  - #### Post Gweets, and Comment on other's Gweets
+    ![Home Page](./assets/homepagefeed.png)
+  - #### Contacts You would like to follow
+    ![Contacts](./assets/people-you-may-know.png)
+- ### Profile Page
+  This is your profile page where all the gweets you ever posted will appear. You can see the Peoples you follow and also your followers directly at the side.
+  - #### My Gweets
+    ![My Gweets](./assets/MyProfilegweets.png)
+  - #### My Following and Followers
+    ![Following and Followers](./assets/following-and-followers.png)
+- #### Comments
+  You can comment on your gweets as well as other peoples gweets and the comments will appear like this on the side for any `See All Comments` button you select for.
+  ![Comments on gweets](./assets/comments.png)

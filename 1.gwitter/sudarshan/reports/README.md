@@ -40,3 +40,52 @@ This tables contains information about the followers and following list.
 - SQL query to insert dummy data into the tables are in [data.sql](../database/data.sql).
 - The instruction for creating database and populating the data are explained in [README](../database/).
 
+# Week 2:
+
+**The task for Week 2 was to develop functionality for Gwitter**
+
+For this I created the following files:
+#### 1. [register.php](../register.php):
+
+- Contains UI and logic for registering new user.
+
+#### 2. [login.php](../login.php):
+
+- Contains UI and logic for user login and session creation.
+
+#### 3. [index.php](../index.php):
+
+- Home page shown after successful login.
+- Contains gweets posted by different users.
+- Section to post new gweet.
+
+![homepage](./assets/gwitter-home.png)
+#### 4. [profile.php](../profile.php):
+
+- View username and their corresponding gweets.
+- Follow and unfollow users.
+
+![profile](./assets/profile.png)
+#### 5. [logout.php](../logout.php):
+
+- Logout and clear session.
+
+
+# Week 3:
+
+**The task for this week was to make docker file and build script file**
+
+For this I created 2 files:
+
+#### 1. [build-docker.sh](../build-docker.sh):
+
+- This removes any existing image named `gwitter-sudru`.
+- Builds image from the Dockerfile.
+- Then run the application from the image at `http://localhost:8080`.
+
+#### 2. [Dockerfile](../Dockerfile):
+- Starts from php:8.1 as base image.
+- Copy all the application files into the image.
+- Installs the necessary dependency for sqlite3 in the system.
+- Load schema into the database and also insert dummy gweets.
+- Then runs application with command `php -S localhost:80`.
