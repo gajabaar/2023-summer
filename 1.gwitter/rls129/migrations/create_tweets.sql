@@ -1,0 +1,9 @@
+CREATE TABLE Gweets(
+	username VARCHAR(128) CHECK (LENGTH(username) > 0),
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	gweet VARCHAR(1024),
+	time INTEGER NOT NULL,
+	isreply INTEGER NOT NULL,
+
+	FOREIGN KEY (username) REFERENCES Users(username)
+);
