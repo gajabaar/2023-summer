@@ -1,0 +1,17 @@
+# Use the PHP 7.4 Apache image
+FROM php:7.4-cli
+
+# Set the working directory to /usr/src/app
+WORKDIR /usr/src/app
+
+# Copy the project files to the working directory
+COPY . .
+
+# Install SQLite3
+RUN apt-get update && apt-get install -y sqlite3 && \
+  sqlite3 ./database/gwitter.db < ./database/schema.sql
+
+# Expose port 8000
+EXPOSE 8000
+
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "."]
