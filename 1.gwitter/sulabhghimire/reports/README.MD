@@ -239,6 +239,7 @@ Note that `SQLite` doesn’t directly support the `RIGHT JOIN` and `FULL OUTER J
 \
 &nbsp; 
 ## WEEK Two
+***
 <details>
 <summary> Click here to view Week Two Report </summary>
 
@@ -253,22 +254,21 @@ The pages that I have created in this week includes following:
 - `followers.php` page : Show all the followers of a user.
 - `following.php` page : Show all the following of a user.
  
-<details>
-\
-&nbsp; 
-<summary> Click here to view Week Two Report </summary>
-Comming Soon
-
 </details>
 
 \
-&nbsp; 
+&nbsp;
+
 ## WEEK Three
 ***
-...
 <details>
 <summary> Click here to view Week Three Report </summary>
-Comming Soon
+ 
+The third week mainly consisted of following works:
+- A signup page has been added.
+- Pages that controls the following and unfollowing between users was added.
+- Better UI added for all the pages with the help of basic CSS.
+- Encryption and decryption of password added for better security reasons.
 
 </details>
 
