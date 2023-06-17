@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1da1f2;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            margin-bottom: 10px;
+            padding: 12px;
+            border: 1px solid #e1e8ed;
+            border-radius: 5px;
+            background-color: #f5f8fa;
+            font-size: 16px;
+            color: #14171a;
+            outline: none;
+        }
+
+        button {
+            padding: 15px;
+            background-color: #1da1f2;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0c8de4;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #1da1f2;
+            text-decoration: none;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="container">
+        <h1>Login to Gwitter</h1>
+        <form action="home.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+        <div class="footer">
+            <a href="profile.php">Forgot password?</a>
+        </div>
+    </div>
+</body>
+
+</html>
