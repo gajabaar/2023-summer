@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gwitter</title>
+     <!-- Linking external CSS file -->
+     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
     <?php
+    
     $username = $_GET["username"];
     $password = $_GET["password"];
     $userExist = false;
