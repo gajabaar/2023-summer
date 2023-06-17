@@ -9,10 +9,10 @@ if (isset($_SESSION['user_id'])) {
 }
 
 ?>
-       
+
 <html>
 <head>
-    <title>Gwitter - Login Form</title>
+    <title>Gwitter - Sign Up</title>
     <style>
     body
     {
@@ -80,10 +80,16 @@ if (isset($_SESSION['user_id'])) {
         text-align : center;
         margin-top : 10px;
     }
+    #Box{
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
     </style>
 </head>
 <body>
-    <h2> Gwitter - Login Page</h2><br>
+    <h2> Gwitter - Sign Up</h2><br>
     <div class="login">
     
     <?php if (isset($_GET['error'])) { ?>
@@ -92,21 +98,35 @@ if (isset($_SESSION['user_id'])) {
         </div>
         <?php } ?>
     
-    <form id="login" method="Post" action="login.php">
+    <form id="login" method="Post" action="signup_logic.php">
+        <label><b>Full Name
+        </b>
+        <input type="text" name="fullname" placeholder="Full Name" id="Uname" required>
+        <br><br>
         <label><b>User Name
         </b>
         </label>
-        <input type="text" id="Uname" placeholder="Username" name="username">
+        <input type="text" id="Uname" placeholder="Username" name="username" required>
         <br><br>
         <label><b>Password
         </b>
         </label>
         <input type="Password" id="Pass" placeholder="Password" name="password">
         <br><br>
-        <input type="submit" id="log" value="Log In Here">
+        <label><b>Retype Password
+        </b>
+        </label>
+        <input type="Password" id="Pass" placeholder="Retype Same Password" name="password2">
+        <br><br>
+        <label><b>Bio For Your Profile
+        </b>
+     </label>
+        <textarea type="text" name="bio" rows="10" cols="50" placeholder="Enter your Bio" id="Box" required></textarea>
+        <br><br>
+        <input type="submit" id="log" value="Sign Up">
         <br><br>
         <span>
-        Don't have ID ? <a href="signup.php">Sign Up</a>
+        Already have an Id <a href="index.php">Log In</a>
     </span>
     </form>
 </div>

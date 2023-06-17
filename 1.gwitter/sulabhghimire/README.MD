@@ -8,7 +8,11 @@
 <div style="text-align: justify">Please follow following steps to run the gwitter application on your local device. 
     <ul>
         <li> Comming Soon </li>
-        <li> ... </li>
+        <li> Download the whole repo</li>
+        <li> Navigate into sulabhghimire folfer </li>
+        <li> Don't delete database folder inside sulabhghimire it is important </li>
+        <li> In your terminal type <b>sh build_docker.sh</b> </li>
+        <li> Visit server at <b>http://0.0.0.0:8080</b> not to <b>http://0.0.0.0:80</b> as suggested by terminal. </li>
     </ul>
 </div>
 

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 session_start();
 include "db_conn.php";
@@ -20,15 +19,18 @@ if (isset($_POST['fullname']) && isset($_POST['bio']) && isset($_POST['password'
 
         $que = "UPDATE Users SET Password = :password, Bio = :bio, FullName = :fullname WHERE UserID = :user_id";
         $st = $database->prepare($que);
-        $uname = $_POST['password'];
-        $pass = $_POST['fullname'];
-        $st->bindValue(':password', $uname);
-        $st->bindValue(':fullname', $pass);
+        $plaintext_password = $_POST['password'];
+        $hash = password_hash($plaintext_password, PASSWORD_DEFAULT);
+        $fullname = $_POST['fullname'];
+        $st->bindValue(':password', $hash);
+        $st->bindValue(':fullname', $fullname);
         $st->bindValue(':bio', $_POST['bio']);
         $st->bindValue(':user_id', $_SESSION['user_id']);
 
+        $send_this = $_SESSION['user_id'];
+
         if($st->execute()){
-            header('Location: profile.php');
+            header("Location: profile.php?val=$send_this");
         }
         else{
             $msg=$sql->errorInfo(); // if any error is there it will be posted
@@ -50,30 +52,127 @@ if (isset($_POST['fullname']) && isset($_POST['bio']) && isset($_POST['password'
     $row = $results -> fetchArray();
 
 ?>
-<html>
+<!DOCTYPE html>
 
+<html>
 <head>
-    <title> Gwitter </title>
+    <title>Gwitter - Update Profile</title>
+    <style>
+    body
+    {
+        margin: 0;
+        padding: 0;
+        background-color:#6abadeba;
+        font-family: 'Arial';
+    }
+    .login{
+            width: 382px;
+            overflow: hidden;
+            margin: auto;
+            margin: 20 0 0 450px;
+            padding: 80px;
+            background: #23463f;
+            border-radius: 15px ;
+
+    }
+    h2{
+        text-align: center;
+        color: #277582;
+        padding: 20px;
+    }
+    label{
+        color: #08ffd1;
+        font-size: 17px;
+    }
+    #Uname{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+    #Pass{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
+    #log{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+
+
+    }
+    span{
+        color: white;
+        font-size: 17px;
+    }
+    a{
+        background-color: none;
+        color: white;
+    }
+    #error{
+        background-color : white;
+        color : red;
+        height : 30px;
+        text-align : center;
+        margin-top : 10px;
+    }
+    #Box{
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
+    </style>
 </head>
 <body>
-    <h2>Update Your Profile : </h2>
-    <form action="updateprofile.php" method="post">
-        Full Name : 
-        <input type="text" name="fullname" value="<?php echo $row['FullName']?>">
+    <h2> Gwitter - Login Page</h2><br>
+    <div class="login">
+    
+    <?php if (isset($_GET['error'])) { ?>
+        <div id="error">
+        <p class="error"><?php echo $_GET['error']; ?></p>
+        </div>
+        <?php } ?>
+    
+    <form id="login" method="Post" action="updateprofile.php">
+        <label><b>User Name
+        </b>
+        </label>
+        <input type="text" id="Uname" value="<?php echo $row['UserName']?>" disabled>
         <br><br>
-        User Name : <?php echo $_SESSION['username']?>
+        
+        <label><b>Full Name
+        </b>
+        </label>
+        <input type="text" id="Uname" placeholder="FullNAme" name="fullname" value="<?php echo $row['FullName']?>">
         <br><br>
-        Bio : <br>
-        <textarea type="text" name="bio"><?php echo $row['Bio']?></textarea>
+        <label><b> Bio
+        </b>
+        </label>
+        <textarea type="text" name="bio" rows="10" cols="50" id="Box"><?php echo $row['Bio']?></textarea>
         <br><br>
-        Password :
-        <input type="password" name="password" placeholder="Password" value="<?php echo $row['Password']?>">
+        <label><b>New Password
+        </b>
+        </label>
+        <input type="Password" id="Pass" placeholder="Password" name="password">
         <br><br>
-        Retype Password :
-        <input type="password" name="password2" placeholder="Password" value="<?php echo $row['Password']?>">
+        <label><b>Re-Type Password
+        </b>
+        </label>
+        <input type="Password" id="Pass" placeholder="Retype New Password" name="password2">
         <br><br>
-        <input type="submit" value="Update">
+        <input type="submit" id="log" value="Update">
+        <br><br>
+    </span>
     </form>
+</div>
 </body>
-
 </html>
