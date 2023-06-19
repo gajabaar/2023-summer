@@ -17,20 +17,19 @@
 
         $userExist = validateUser($username, $password);
 
-        echo $userExist;
-        if (true) {
+        if ($userExist) {
             session_start();
             echo $username;
 
             $_SESSION['username'] = $username;
 
-            header("Location: http://localhost:4000/php/profile.php");
+            header("Location: http://localhost:8000/php/profile.php");
             die();
         } else {
-            header("Location: http://localhost:4000/index.html");
+            header("Location: http://localhost:8000/index.html");
         }
     } else {
-        header("Location: http://localhost:4000/index.html");
+        header("Location: http://localhost:8000/index.html");
         die();
     }
     ?>
