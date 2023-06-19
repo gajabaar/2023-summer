@@ -1,18 +1,20 @@
 <?php
 function validateUser($username, $password)
 {
-    $userExist = false;
+
 
     $database = new SQLite3('../gwitter.sqlite3');
-    $results = $database->query('SELECT NAME,PASSWORD FROM USERS;');
-    while ($row = $results->fetchArray()) {
-        if ($row['NAME'] == $username) {
-            if ($row["PASSWORD"] == $password) {
-                $userExist = true;
-                break;
-            }
-        }
-    }
 
-    return $userExist;
+    $query = $database->prepare('SELECT * FROM USERS WHERE NAME = :username and PASSWORD = :password');
+    $query->bindValue(':username', $username, SQLITE3_TEXT);
+    $query->bindValue(':password', $password, SQLITE3_TEXT);
+
+    $results = $query->execute();
+
+    $row = $results->fetchArray(SQLITE3_ASSOC);
+    
+    if ($row) {
+        return true;
+    }
+    return false;
 }
