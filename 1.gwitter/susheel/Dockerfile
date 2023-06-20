@@ -15,7 +15,6 @@ RUN bash database/populate_database.sh
 RUN bash install_php.sh
 
 
-RUN rm /var/www/html/index.html
 
 
 
