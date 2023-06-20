@@ -10,7 +10,7 @@ INSERT INTO users(username, passkey)
         ("tsunade", "tsunade123"),
         ("hinata", "hinata123");
 
-INSERT INTO followed_by(username, follows) 
+INSERT INTO followed_by(username, followed_by) 
     VALUES
         ("naruto","hinata"),
         ("naruto","sasuke"),
