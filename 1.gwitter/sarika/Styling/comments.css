@@ -1,0 +1,92 @@
+body {
+    background-color: rgba(142, 142, 192, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    text-align: center;
+    color: #2c3a4e;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  #submit {
+    background-color: #2c3a4e;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #2c3a4e;
+  }
+
+  .comment-container {
+    margin-bottom: 20px;
+  }
+
+  .comment-container b {
+    font-weight: bold;
+  }
+
+  .comment-container p {
+    margin: 0;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+
+  a {
+    color: #2c3a4e;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .username {
+    color: #2c3a4e;
+    font-weight: bold;
+    font-size: 18px;
+    padding-right: 240px;
+}
+
+.comments {
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 300px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(105, 107, 110, 0.1);
+    background-color: rgb(195, 202, 209);
+    margin: 8px;
+    font-size: 16px;
+}
