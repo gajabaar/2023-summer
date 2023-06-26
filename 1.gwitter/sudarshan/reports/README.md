@@ -89,3 +89,28 @@ For this I created 2 files:
 - Installs the necessary dependency for sqlite3 in the system.
 - Load schema into the database and also insert dummy gweets.
 - Then runs application with command `php -S localhost:80`.
+
+# Week 4:
+
+**The task for this week was to test one Gwitter application and complete labs on Portswigger**
+
+### For testing with OpenVAS I tested application made by [Tilak](https://github.com/gajabaar/2023-summer/tree/main/1.gwitter/tilak).
+
+- Setup local instance of OpenVAS using docker.
+
+```bash
+docker pull mikesplain/openvas
+```
+
+- run the container
+
+```bash
+docker run -d -p 443:443 --name openvas mikesplain/openvas
+```
+
+Commit Hash: ebf0775
+
+- I scaned the application through the openvas and also tested the source code manually.
+- The findings of the application is [here](https://handsomely-wishbone-ecc.notion.site/Gwitter-OpenVAS-50fa5c77fca24f4a9a3be117d64cd651).
+
+- For the Web Security lab I did the Directory Traversal lab. The lab solution is repoted [here](https://handsomely-wishbone-ecc.notion.site/Directory-Traversal-bc7cacf0b34a472696199eaa81bc88e9?pvs=4)
