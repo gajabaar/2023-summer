@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logout {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .logout button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .newgweet {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .newgweet textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .newgweet button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .gweet {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 0 auto 20px;
+  }
+  
+  .gweet i {
+    /* color: #888; */
+    color: #209f0e;
+  }
+  
+  .gweet p {
+    margin: 10px 0;
+  }
+  
+  .gweet a {
+    /* color: #333; */
+    color: #0980ff;
+    text-decoration: none;
+  }
+  
+  .gweet a:hover {
+    text-decoration: underline;
+  }
+  
