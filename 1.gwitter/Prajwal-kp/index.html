@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Gwitter | Home</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header>
+      <h1>Gwitter</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Log in</h2>
+      <form action="signin.php" method="post">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+          <input type="submit" value="Log in">
+        </div>
+      </form>
+      <h2>Sign up</h2>
+      <form action="signup.php" method="post">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+          <label for="confirm_password">Confirm password:</label>
+          <input type="password" name="confirm_password" id="confirm_password" required>
+        </div>
+        <div>
+          <input type="submit" value="Sign up">
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Gwitter</p>
+    </footer>
+  </body>
+</html>
