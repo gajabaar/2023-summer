@@ -72,3 +72,10 @@ For this I created the following files:
 - [X] Add Docker files
 - [X] Bug fix
 
+# Week4
+**The task for this week was to test one Gwitter application and complete labs on Portswigger**
+
+ > I am facing problem on openvas. Due to which I was not able to test gwitter with openvas.
+
+ 
+For Web Security lab I did the Information Disclosure lab. The solution writeup is [here](https://www.notion.so/Information-Disclosure-706057617fa441388761f55d26ea353b?pvs=4)
