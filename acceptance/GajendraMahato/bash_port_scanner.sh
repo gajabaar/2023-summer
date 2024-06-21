@@ -18,7 +18,7 @@ host=$1  # Assign the provided hostname to a variable
 echo -e "Scanning ports on $host\n"
 hostname=$1  # Assign the provided hostname to a variable
 for port in {1..65535}; do 
-    if ncat -zw1 $hostname $port ; then  # Attempt to connect to the port using SSL
+    if nc -zw1 $hostname $port ; then  # Attempt to connect to the port using SSL
         echo "Discovered open port $port/tcp on $hostname"
     fi
 done
